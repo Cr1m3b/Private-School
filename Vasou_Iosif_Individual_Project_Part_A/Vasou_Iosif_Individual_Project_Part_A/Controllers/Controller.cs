@@ -93,10 +93,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Controllers
             var student = ViewStudent.GetStudentInfo(allStudents);
             var assignment = ViewAssignmet.GetAssignmentInfo(allAssignmets);
             AssignmentService.AddAssignmentToStudent(assignment, student);
-            Console.WriteLine($"{student.FirstName} {student.LastName} has been added to {assignment.Title}.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\n" + "Press any key to exit.");
-            Console.ReadKey();
+            StudentService.AddStudentToAssignment(student, assignment);
+            Console.WriteLine($"{assignment.Title} has been added to {student.FirstName} {student.LastName}.");
         }
         public void PrintAssignmentsPerStudent()
         {
@@ -125,6 +123,22 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Controllers
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Press any key to exit.");
             Console.ReadKey();
+        }
+        public void PrintTrainersPerCourse()
+        {
+            var allCourses = CourseService.GetCourses();
+            ViewTrainer.PrintTrainersInCourse(allCourses);
+        }
+        public void printStudentsBelongingInMoreThanOneCourses()
+        {
+            var allCourses = CourseService.GetCourses();
+            ViewStudent.printStudentsBelongingInMoreThanOneCourses(allCourses);
+        }
+        public void PrintStudentsWithAssignmentDeadline()
+        {
+            var allAssignmets = AssignmentService.GetAssignments();
+            var allStudents = StudentService.GetStudents();
+            ViewAssignmet.PrintStudentsWithAssignmentDeadline(allAssignmets, allStudents);
         }
     }
 }

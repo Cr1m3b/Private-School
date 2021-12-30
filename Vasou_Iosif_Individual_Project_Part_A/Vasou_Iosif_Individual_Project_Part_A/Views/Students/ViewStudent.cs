@@ -38,6 +38,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
                 birthDateInput = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 Console.Write("Enter tuition fees: ");
                 var tuitionFeesInput = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine($"The Student with Firstname: {firstNameInput} and Lastname: {lastNameInput} has been created succesfully !!");
 
                 obj = new Student(firstNameInput, lastNameInput, birthDateInput, tuitionFeesInput);
                 return obj;
@@ -92,6 +93,16 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
             }
             return obj;
             
+        }
+
+        public static void printStudentsBelongingInMoreThanOneCourses(List<Course> courseList)
+        {
+            var newList = courseList[0].StudentsList.Intersect(courseList[courseList.Count].StudentsList);
+            foreach (Student student in newList)
+            {
+                Console.WriteLine("\n" + student.FirstName + " " + student.LastName + " is a student in more than one Course");
+
+            }
         }
     }
 }

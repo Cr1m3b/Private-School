@@ -24,9 +24,14 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Repository_Service
         {
             course.StudentsList.Add(student);
         }
+
         public List<Student> PrintStudentsInCourse(Course course)
         {
             return course.StudentsList;
+        }
+        public void AddStudentToAssignment(Student student, Assignment assignment)
+        {
+            assignment.StudentsList.Add(student);
         }
     }
 }

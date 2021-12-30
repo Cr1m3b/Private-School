@@ -66,5 +66,21 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Trainers
             }
             return obj;
         }
+        public static void PrintTrainersInCourse(List<Course> coursesList)
+        {
+            foreach (Course course in coursesList)
+            {
+                Console.WriteLine("\n" + "------------------------------------------");
+                Console.WriteLine($"{course.Title} Assignments: "+"\n");
+                foreach (Trainer trainer in course.TrainersList)
+                {
+                    Console.WriteLine("\n" + "First Name: " + trainer.FirstName
+                        + "\n" + "Last Name: " + trainer.LastName + "\n"
+                        + "Subject: " + trainer.Subject);
+                    Console.WriteLine("------------------------------------------");
+                }
+
+            }
+        }
     }
 }

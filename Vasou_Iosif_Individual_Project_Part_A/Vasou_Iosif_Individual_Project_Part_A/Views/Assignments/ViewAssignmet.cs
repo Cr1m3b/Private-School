@@ -115,7 +115,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
             foreach (Student student in studentsList)
             {
                 Console.WriteLine("\n" + "------------------------------------------");
-                Console.WriteLine($"{student.FirstName} {student.LastName} Assignments: ");
+                Console.WriteLine($"{student.FirstName} {student.LastName} Assignments: "+"\n");
                 foreach (Assignment assignment in student.AssignmentsList)
                 {
                     Console.WriteLine("\n" + "Title: " + assignment.Title
@@ -126,6 +126,50 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
                     Console.WriteLine("------------------------------------------");
                 }
                 
+            }
+
+        }
+        public static void PrintStudentsWithAssignmentDeadline(List<Assignment> assignmentList, List<Student> studentsList)
+        {
+            Console.Clear();
+            Console.Write("Enter date (dd/MM/yyyy): ");
+            DateTime myDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            Console.WriteLine("\n" + $"You have entered: {myDate}");
+
+            //Method to convert DateTime to Day of Week
+            int GetWeekOfYear(DateTime time)
+            {
+                DayOfWeek day = CultureInfo.InvariantCulture.Calendar.GetDayOfWeek(time);
+                if (day >= DayOfWeek.Monday && day <= DayOfWeek.Wednesday)
+                {
+                    time = time.AddDays(3);
+                }
+                return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            }
+
+            int myWeek = GetWeekOfYear(myDate);
+            Console.WriteLine("\n" + $"Week number of the date that you have entered: {myWeek}");
+
+            foreach (Assignment assignment in assignmentList)
+            {
+                int deadlineWeek = GetWeekOfYear(assignment.SubmissionDate);
+                Console.WriteLine("\n" + $"Week number of the {assignment.Title} assignment is: {deadlineWeek}");
+
+                if (myWeek == deadlineWeek)
+                {
+                    foreach (Student student in assignment.StudentsList)
+                    {
+                        Console.WriteLine("\n" + student.FirstName + " " + student.LastName + $" needs to deliver an {assignment.Title} assignment");
+                        Console.Write("\n" + "Press any key to show next.");
+                        Console.ReadKey();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No student needs to submit in the given week");
+                    Console.Write("\n" + "Press any key to show next.");
+                    Console.ReadKey();
+                }
             }
         }
     }

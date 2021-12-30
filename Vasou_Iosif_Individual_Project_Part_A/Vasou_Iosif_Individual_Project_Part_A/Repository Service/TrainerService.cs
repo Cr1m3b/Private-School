@@ -24,5 +24,9 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Repository_Service
         {
             course.TrainersList.Add(trainer);
         }
+        public List<Trainer> PrintTrainersInCourse(Course course)
+        {
+            return course.TrainersList;
+        }
     }
 }
