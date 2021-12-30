@@ -13,7 +13,6 @@ namespace Vasou_Iosif_Individual_Project_Part_A
     {
         static void Main(string[] args)
         {
-
             SyntheticDataApplication.Run();
         }
     }

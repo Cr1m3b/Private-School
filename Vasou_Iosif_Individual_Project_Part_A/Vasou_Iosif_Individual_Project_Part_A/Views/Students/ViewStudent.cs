@@ -29,6 +29,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
             try
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Enter Student first Name: ");
                 var firstNameInput = Console.ReadLine();
                 Console.Write("Enter Student last Name: ");
@@ -38,7 +39,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
                 birthDateInput = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 Console.Write("Enter tuition fees: ");
                 var tuitionFeesInput = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine($"The Student with Firstname: {firstNameInput} and Lastname: {lastNameInput} has been created succesfully !!");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + $"The Student with Firstname: {firstNameInput} and Lastname: {lastNameInput} has been created succesfully !!");
 
                 obj = new Student(firstNameInput, lastNameInput, birthDateInput, tuitionFeesInput);
                 return obj;
@@ -64,6 +66,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
                 Console.Write("\n" + "Choose a number from the Student's above: ");
                 var studentNr = (Convert.ToInt16(Console.ReadLine()) - 1);
                 obj = StudentList[studentNr];
+                return obj;
             }
             catch (Exception)
             {
@@ -78,6 +81,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
             Course obj = null;
             try
             {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 foreach (Course course in CoursesList)
                 {
                     Console.WriteLine((CoursesList.IndexOf(course) + 1) + ")" + $" {course.Title}");
@@ -92,12 +97,12 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Students
                 Console.ReadKey();
             }
             return obj;
-            
+
         }
 
         public static void printStudentsBelongingInMoreThanOneCourses(List<Course> courseList)
         {
-            var newList = courseList[0].StudentsList.Intersect(courseList[courseList.Count].StudentsList);
+            var newList = courseList[0].StudentsList.Intersect(courseList[courseList.Count - 1].StudentsList);
             foreach (Student student in newList)
             {
                 Console.WriteLine("\n" + student.FirstName + " " + student.LastName + " is a student in more than one Course");

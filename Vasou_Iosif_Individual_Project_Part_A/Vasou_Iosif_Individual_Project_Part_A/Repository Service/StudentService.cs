@@ -20,7 +20,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Repository_Service
         {
             db.Students.Add(student);
         }
-        public void AddStudentToCourse(Student student, Course course)
+        public static void AddStudentToCourse(Student student, Course course)
         {
             course.StudentsList.Add(student);
         }
@@ -29,7 +29,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Repository_Service
         {
             return course.StudentsList;
         }
-        public void AddStudentToAssignment(Student student, Assignment assignment)
+        public static void AddStudentToAssignment(Student student, Assignment assignment)
         {
             assignment.StudentsList.Add(student);
         }

@@ -20,11 +20,11 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Repository_Service
         {
             db.Assignments.Add(assignment);
         }
-        public void AddAssignmentToStudent(Assignment assignment, Student student )
+        public static void AddAssignmentToStudent(Assignment assignment, Student student )
         {
             student.AssignmentsList.Add(assignment);
         }
-        public void AddAssignmentToCourse(Assignment assignment,Course course)
+        public static void AddAssignmentToCourse(Assignment assignment,Course course)
         {
             course.AssignmentsList.Add(assignment);
         }

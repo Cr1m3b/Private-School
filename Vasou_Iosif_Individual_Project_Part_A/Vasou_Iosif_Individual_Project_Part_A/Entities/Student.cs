@@ -12,7 +12,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Entities
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public double TuitionFees { get; set; }
-        public List<Assignment> AssignmentsList { get; set; }
+
+        public List<Assignment> AssignmentsList = new List<Assignment>();
 
         public Student(string firstName, string lastName, DateTime dateOfBirth, double tuitionFees)
         {

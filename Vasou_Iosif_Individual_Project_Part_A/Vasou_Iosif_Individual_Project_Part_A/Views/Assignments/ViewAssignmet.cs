@@ -12,6 +12,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
     {
         static public void PrintAssignments(List<Assignment> AssignmentList)
         {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (Assignment assignment in AssignmentList)
             {
                 Console.WriteLine("\n" + "------------------------------------------");
@@ -29,6 +31,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
             try
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Enter title of the Assignment: ");
                 var titleInput = Console.ReadLine();
                 Console.Write("Enter description of the Assignment: ");
@@ -39,6 +42,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
                 var oralInput = float.Parse(Console.ReadLine());
                 Console.Write("Total Mark: ");
                 var totalInput = float.Parse(Console.ReadLine());
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + $"The Assignment with Title: {titleInput} and Description: {descriptionInput} has been created succesfully !!");
 
                 obj = new Assignment(titleInput, descriptionInput, subDateInput, oralInput, totalInput);
                 return obj;
@@ -112,6 +117,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
         }
         public static void PrintAssignmentsPerStudent(List<Student> studentsList)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (Student student in studentsList)
             {
                 Console.WriteLine("\n" + "------------------------------------------");
@@ -132,6 +138,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Assignments
         public static void PrintStudentsWithAssignmentDeadline(List<Assignment> assignmentList, List<Student> studentsList)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Enter date (dd/MM/yyyy): ");
             DateTime myDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             Console.WriteLine("\n" + $"You have entered: {myDate}");

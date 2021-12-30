@@ -14,8 +14,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Entities
         public DateTime SubmissionDate { get; set; }
         public float OralMark { get; set; }
         public float TotalMark { get; set; }
-        public List<Student> StudentsList { get; set; }
 
+        public List<Student> StudentsList = new List<Student>();
         public Assignment(string title, string description, DateTime submissionDate, float oralMark, float totalMark)
         {
             this.Title = title;

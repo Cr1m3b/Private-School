@@ -13,9 +13,10 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Entities
         public string Type { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public List<Student> StudentsList { get; set; }
-        public List<Trainer> TrainersList { get; set; }
-        public List<Assignment> AssignmentsList { get; set; }
+
+        public List<Student> StudentsList = new List<Student>();
+        public List<Trainer> TrainersList = new List<Trainer>();
+        public List<Assignment> AssignmentsList = new List<Assignment>();
 
         public Course(string title, string stream, string type, DateTime startDate, DateTime endDate)
         {

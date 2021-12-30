@@ -24,8 +24,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Applications
                 Console.WriteLine("\n" + "What would you like to do?");
                 Console.WriteLine("\n" + "1)Create a Student."
                                 + "\n" + "2)Create a Trainer."
-                                + "\n" + "3)Create Assignment."
-                                + "\n" + "4)Create Course."
+                                + "\n" + "3)Create an Assignment."
+                                + "\n" + "4)Create a Course."
                                 + "\n" + "5)Print All Students."
                                 + "\n" + "6)Print All Trainers."
                                 + "\n" + "7)Print All Assignments."
@@ -50,7 +50,6 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Applications
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("CREATING A STUDENT" + "\n");
                     controller.CreateStudent();
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("\n" + "Press any key to exit.");
                     Console.ReadKey();
                 }
@@ -61,7 +60,6 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Applications
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("CREATING A TRAINER" + "\n");
                     controller.CreateTrainer();
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("\n" + "Press any key to exit.");
                     Console.ReadKey();
                 }
@@ -72,7 +70,6 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Applications
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("CREATING AN ASSIGNMENT" + "\n");
                     controller.CreateAssignment();
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("\n" + "Press any key to exit.");
                     Console.ReadKey();
                 }
@@ -83,7 +80,6 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Applications
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("CREATING A COURSE" + "\n");
                     controller.CreateCourse();
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("\n" + "Press any key to exit.");
                     Console.ReadKey();
                 }

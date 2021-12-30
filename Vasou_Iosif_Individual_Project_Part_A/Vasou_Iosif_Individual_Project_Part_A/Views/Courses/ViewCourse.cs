@@ -29,6 +29,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Courses
             try
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("Enter Course Title: ");
                 var titleInput = Console.ReadLine();
                 Console.Write("Enter Stream (C# or Java): ");
@@ -39,6 +40,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Courses
                 var startDateInput = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 Console.Write("Enter Course End Date (dd/MM/yyyy): ");
                 var endDateInput = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + $"The Course with Title: {titleInput} and Stream: {streamInput} has been created succesfully !!");
 
                 obj = new Course(titleInput, streamInput, typeInput, startDateInput, endDateInput);
                 return obj;
@@ -49,7 +52,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Courses
             }
             return obj;
         }
-        public static Course GetCourseInfo(List<Course> CourseList)
+        public static Course GetCourseInfo(List<Course> courseList)
         {
             Course obj = null;
             try
@@ -57,13 +60,13 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Courses
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("");
-                foreach (Course course in CourseList)
+                foreach (Course course in courseList)
                 {
-                    Console.WriteLine((CourseList.IndexOf(course) + 1) + ")" + $" {course.Title}");
+                    Console.WriteLine((courseList.IndexOf(course) + 1) + ")" + $" {course.Title}.");
                 }
                 Console.Write("\n" + "Choose a number from the Course's list above: ");
                 var courseNr = (Convert.ToInt32(Console.ReadLine()) - 1);
-                obj = CourseList[courseNr];
+                obj = courseList[courseNr];
             }
             catch (Exception)
             {

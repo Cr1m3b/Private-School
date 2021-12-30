@@ -20,7 +20,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Repository_Service
         {
             db.Trainers.Add(trainer);
         }
-        public void AddTrainerToCourse(Trainer trainer, Course course)
+        public static void AddTrainerToCourse(Trainer trainer, Course course)
         {
             course.TrainersList.Add(trainer);
         }

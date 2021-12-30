@@ -33,6 +33,8 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Trainers
                 var lastNameInput = Console.ReadLine();
                 Console.Write("Enter subject: ");
                 var subjectInput = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n" + $"The Trainer with Firstname: {firstNameInput} and Lastname: {lastNameInput} has been created succesfully !!");
 
                 obj = new Trainer(firstNameInput, lastNameInput, subjectInput);
                 return obj;
@@ -68,6 +70,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Views.Trainers
         }
         public static void PrintTrainersInCourse(List<Course> coursesList)
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             foreach (Course course in coursesList)
             {
                 Console.WriteLine("\n" + "------------------------------------------");

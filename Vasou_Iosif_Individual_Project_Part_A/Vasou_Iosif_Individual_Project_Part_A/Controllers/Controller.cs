@@ -36,11 +36,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Controllers
             var assignment = ViewAssignmet.GetAssignmentInfo(allAssignmets);
             var course = ViewCourse.GetCourseInfo(allCourses);
             AssignmentService.AddAssignmentToCourse(assignment, course);
-
             Console.WriteLine($"\n {assignment.Title} has been added to {course.Title}.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\n" + "Press any key to exit.");
-            Console.ReadKey();
         }
         public void ReadAllCourses()
         {
@@ -63,10 +59,6 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Controllers
             var course = ViewStudent.PrintStudentsInCourse(allCourses);
             var studentList = StudentService.PrintStudentsInCourse(course);
             ViewStudent.PrintStudents(studentList);
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\n" + "Press any key to exit.");
-            Console.ReadKey();
         }
         public void CreateStudent()
         {
@@ -80,11 +72,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Controllers
             var student = ViewStudent.GetStudentInfo(allStudents);
             var course = ViewCourse.GetCourseInfo(allCourses);
             StudentService.AddStudentToCourse(student, course);
-
             Console.WriteLine($"{student.FirstName} {student.LastName} has been added to {course.Title}.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\n" + "Press any key to exit.");
-            Console.ReadKey();
         }
         public void AddAssignmentToStudent()
         {
@@ -118,11 +106,7 @@ namespace Vasou_Iosif_Individual_Project_Part_A.Controllers
             var trainer = ViewTrainer.GetTrainerInfo(allTrainers);
             var course = ViewCourse.GetCourseInfo(allCourses);
             TrainerService.AddTrainerToCourse(trainer, course);
-
             Console.WriteLine($"{trainer.FirstName} {trainer.LastName} has been added to {course.Title}.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("Press any key to exit.");
-            Console.ReadKey();
         }
         public void PrintTrainersPerCourse()
         {
